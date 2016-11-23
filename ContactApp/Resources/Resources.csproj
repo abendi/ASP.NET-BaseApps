@@ -69,6 +69,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Domain.resx</DependentUpon>
     </Compile>
+    <Compile Include="Links.et.Designer.cs">
+      <DependentUpon>Links.et.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Links.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Links.resx</DependentUpon>
+    </Compile>
     <Compile Include="Manage.et.Designer.cs">
       <DependentUpon>Manage.et.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -112,6 +122,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Account.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Links.et.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Links.et.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Links.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Links.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage.et.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

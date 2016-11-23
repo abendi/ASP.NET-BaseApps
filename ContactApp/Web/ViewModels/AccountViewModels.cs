@@ -55,7 +55,7 @@ namespace Web.ViewModels
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof (Account),
             ErrorMessageResourceName = "ViewModel_EmailRequired")]
         [Display(ResourceType = typeof (Account), Name = "ViewModel_Email")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessageResourceType = typeof(Account), ErrorMessageResourceName = "ViewModel_EmailInvalid")]
         public string Email { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof (Account),

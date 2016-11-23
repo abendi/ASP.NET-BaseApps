@@ -46,31 +46,26 @@ namespace Web
                 "~/bower_components/respond/respond.min.js"));
 
 
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                   "~/Scripts/app/app.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/siteScripts").Include(
+                "~/Scripts/agency.js",
+                "~/Scripts/cbpAnimatedHeader.js",
+                "~/Scripts/classie.js",
+                "~/Scripts/html5shiv.js",
+                "~/Scripts/jquery.easing.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/bower_components/bootstrap/dist/css/bootstrap.css",
                 "~/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css",
                 "~/Content/font-awesome-4.6.1/css/font-awesome.css"
                 ));
 
-
-
-            bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                   "~/Scripts/app/app.js"));
-
-
-            // AdminLTE stylebundle
-            bundles.Add(new StyleBundle("~/Content/adminltecss").Include(
-                "~/Content/AdminLTE.css",
-                "~/Content/skins/_all-skins.min.css"
-                ));
-
-            // Default template stylebundle
+            // Cake-delights template stylebundle
             bundles.Add(new StyleBundle("~/Content/sitecss").Include(
-                "~/Content/site.css"
+                "~/Content/style.css"
                 ));
-
-            bundles.Add(new ScriptBundle("~/bundles/adminltejs").Include(
-                "~/Scripts/AdminLTE/app.js"));
 
             BundleTable.EnableOptimizations = false;
         }

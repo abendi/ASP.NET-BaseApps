@@ -76,7 +76,7 @@ namespace Web.App_Start
             kernel.Bind<EFRepositoryFactories>().To<EFRepositoryFactories>().InSingletonScope();
             kernel.Bind<IEFRepositoryProvider>().To<EFRepositoryProvider>().InRequestScope();
             //kernel.Bind<IUOW>().To<UOW>().InRequestScope();
-            kernel.Bind<IUOW>().To<WebApiUOW>().InRequestScope();
+            kernel.Bind<IUOW>().To<UOW>().InRequestScope();
 
             kernel.Bind<IUserStore<User>>().To<UserStore>().InRequestScope();
             kernel.Bind<IRoleStore<Role>>().To<RoleStore>();

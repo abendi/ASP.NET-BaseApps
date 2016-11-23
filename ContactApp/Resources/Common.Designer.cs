@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MyApplication.
+        ///   Looks up a localized string similar to Cake Delights.
         /// </summary>
         public static string ApplicationName {
             get {
@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logg off.
+        ///   Looks up a localized string similar to Log off.
         /// </summary>
         public static string LogOff {
             get {

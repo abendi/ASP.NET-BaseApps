@@ -168,4 +168,7 @@
   <data name="Login_UseLocalAccountToLogin" xml:space="preserve">
     <value>Logi sisse kasutades kohaliku kontot.</value>
   </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>E-maili aadress või parool on vale</value>
+  </data>
 </root>

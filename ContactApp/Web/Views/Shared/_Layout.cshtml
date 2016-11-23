@@ -1,4 +1,5 @@
 ﻿@using System.Threading
+@using Web.Helpers
 @{
     var titleTag = (string.IsNullOrWhiteSpace(ViewBag.Title) ? "" : ViewBag.Title + " - ") + Resources.Common.ApplicationName;
 
@@ -21,39 +22,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- META DATA -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@titleTag</title>
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+
+    <meta charset="UTF-8">
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/globalize")
+    @Scripts.Render("~/bundles/cldr")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/moment")
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/Scripts/tinymce/tinymce.min.js")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/siteScripts")
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/sitecss")
-    @Scripts.Render("~/bundles/modernizr")
+
+
     <script type="text/javascript">
         var currentCultureCode = '@currentCultureCode';
     </script>
-    @RenderSection("headerscripts", required: false)
 </head>
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink(@Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(Resources.Common.ApplicationName, "Index", new { controller = "Home"}, new { @class="navbar-brand page-scroll" })
             </div>
-            <div class="navbar-collapse collapse">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("ApiDemo", "ApiDemo", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("HelperDemo", "Index", "HelperDemo", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Files", "Index", "FDemo", new { area = "" }, null)</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Persons", "Index", "Persons", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("Contacts", "Index", "Contacts", new { area = "" }, null)</li>
-                    }
-                    @*<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        @Html.ActionLink(Resources.Links.Home, "Index", "Home", new {area = ""}, new { @class = "page-scroll" })
+                    </li>
+                    <li>
+                        @Html.ActionLink(Resources.Links.About, "About", "Home", new {area = ""}, new { @class = "page-scroll" })
+                    </li>
+                    <li>
+                        @Html.ActionLink(Resources.Links.Products, "Menu",  "Home", new { area = "" }, new { @class = "page-scroll" })
+                    </li>
+                    <li>
+                        @Html.ActionLink(Resources.Links.Contact, "Contact", "Home", new { area = "" }, new {@class = "page-scroll"})
+                    </li>
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li class="dropdown">
@@ -81,38 +112,57 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="page-content">
+        <br/>
+        <section class="box-content">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </section>
+    </div>
+<footer>
+    <div class="wrap-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-footer col-md-6">
+                    <h2 class="footer-title">About Us</h2>
+                    <div class="textwidget">
+                        Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br>
+                        Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non.
+                    </div>
+                </div>
+                <div class="col-footer col-md-6">
+                    <h2 class="footer-title">CONTACT</h2>
+                    <div class='embed-container maps'>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="100%" height="200px" frameborder="0" style="border: 0"></iframe>
+                    </div>
+                    <span>
+                            JL.Kemacetan timur no.23. block.Q3<br>
+                            Jakarta-Indonesia
+                        </span>
+                    <span>
+                            +6221 888 888 90 <br>
+                            +6221 888 88891
+                        </span>
+                    <span>info@yourdomain.com</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>
-                &copy; @DateTime.Now.Year - @Resources.Common.ApplicationName
-                @if (Request.IsAuthenticated)
-            {
-                    <text>(<a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Common.LogOff</a>)</text>
-                }
-                else
-                {
-                    <text>(@Html.ActionLink(@Resources.Common.Login, "Login", new { area = "", controller = "Account" }, htmlAttributes: new { id = "loginLink" }) | @Html.ActionLink(@Resources.Common.Register, "Register", new { area = "", controller = "Account" }, htmlAttributes: new { id = "registerLink" }))</text>
-                }
-                (Culture:<b>@Culture</b> UICulture:<b>@UICulture</b>)
-            </p>
-        </footer>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>&copy @DateTime.Now.Year - @Resources.Common.ApplicationName</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/cldr")
-    @Scripts.Render("~/bundles/globalize")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/moment")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Scripts/tinymce/tinymce.min.js")
-
-
-    @Scripts.Render("~/bundles/app")
-
-    @RenderSection("scripts", required: false)
+</footer>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -13,7 +13,7 @@
 
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", new {area = ""}, FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
+    using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
 
@@ -23,17 +23,19 @@
                     @User.Identity.GetUserName() <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li>@Html.ActionLink(@Resources.Common.ManageAccount, "Index", new {area = "", controller = "Manage"})</li>
+                    <li>
+                        @Html.ActionLink(@Resources.Common.ManageAccount, "Index", new { area = "", controller = "Manage" })
+                    </li>
                     <li>
                         <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Common.LogOff</a>
                     </li>
                 </ul>
             </li>
             <li class="@Html.Raw(culture == "et" ? "list-group-item-success" : "")">
-                @Html.ActionLink("Est", "SetLanguage", new {area = "", controller = "Language", culture = "et", returnUrl}, htmlAttributes: new {id = "langLinkEst"})
+                @Html.ActionLink("Est", "SetLanguage", new { area = "", controller = "Language", culture = "et", returnUrl }, htmlAttributes: new { id = "langLinkEst" })
             </li>
             <li class="@Html.Raw(culture == "en" ? "list-group-item-success" : "")">
-                @Html.ActionLink("Eng", "SetLanguage", new {area = "", controller = "Language", culture = "en", returnUrl}, htmlAttributes: new {id = "langLinkEng"})
+                @Html.ActionLink("Eng", "SetLanguage", new { area = "", controller = "Language", culture = "en", returnUrl }, htmlAttributes: new { id = "langLinkEng" })
             </li>
         </ul>
     }
@@ -41,11 +43,18 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li class="@Html.Raw(culture == "et" ? "list-group-item-success" : "")">
-            @Html.ActionLink("Est", "SetLanguage", new {area = "", controller = "Language", culture = "et", returnUrl}, htmlAttributes: new {id = "langLinkEst"})
+        <li>
+            @Html.ActionLink(Resources.Common.Login, "Login", new {controller = "Account"})
         </li>
-        <li class="@Html.Raw(culture == "en" ? "list-group-item-success" : "")">
-            @Html.ActionLink("Eng", "SetLanguage", new {area = "", controller = "Language", culture = "en", returnUrl}, htmlAttributes: new {id = "langLinkEng"})
+        <li>
+            @Html.ActionLink(Resources.Common.Register, "Register", new { controller = "Account" })
         </li>
-    </ul>
+
+    <li class="@Html.Raw(culture == "et" ? "list-group-item-success" : "")">
+        @Html.ActionLink("Est", "SetLanguage", new { area = "", controller = "Language", culture = "et", returnUrl }, htmlAttributes: new { id = "langLinkEst" })
+    </li>
+    <li class="@Html.Raw(culture == "en" ? "list-group-item-success" : "")">
+        @Html.ActionLink("Eng", "SetLanguage", new { area = "", controller = "Language", culture = "en", returnUrl }, htmlAttributes: new { id = "langLinkEng" })
+    </li>
+</ul>
 }

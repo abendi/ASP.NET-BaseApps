@@ -168,4 +168,7 @@
   <data name="Login_UseLocalAccountToLogin" xml:space="preserve">
     <value>Use a local account to log in.</value>
   </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>E-mail address or password is incorrect</value>
+  </data>
 </root>

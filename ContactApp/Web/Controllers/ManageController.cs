@@ -27,11 +27,12 @@ namespace Web.Controllers
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager,
             IAuthenticationManager authenticationManager, ILogger logger)
         {
+            _logger = logger;
             _logger.Info("");
             _userManager = userManager;
             _signInManager = signInManager;
             _authenticationManager = authenticationManager;
-            _logger = logger;
+
         }
 
         //

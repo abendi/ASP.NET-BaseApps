@@ -27,6 +27,10 @@ namespace Web.Controllers
             return View(vm);
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
 
         public ActionResult ApiDemo()
         {
