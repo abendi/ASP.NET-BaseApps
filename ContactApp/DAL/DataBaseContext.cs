@@ -63,6 +63,10 @@ namespace DAL
         public IDbSet<MultiLangString> MultiLangStrings { get; set; }
         public IDbSet<Translation> Translations { get; set; }
 
+        public IDbSet<Category> Categories { get; set; }
+        public IDbSet<Product> Products { get; set; }
+        public IDbSet<Ingredient> Ingredients { get; set; }  
+
 
         // Identity tables, PK - string
         //public IDbSet<Role> Roles { get; set; }

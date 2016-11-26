@@ -66,6 +66,10 @@ namespace DAL
         public IPersonRepository Persons => GetRepo<IPersonRepository>();
         public IContactRepository Contacts => GetRepo<IContactRepository>();
         public IArticleRepository Articles => GetRepo<IArticleRepository>();
+        public ICategoryRepository Categories => GetRepo<ICategoryRepository>();
+        public IIngredientRepository Ingredients => GetRepo<IIngredientRepository>();
+        public IProductRepository Products => GetRepo<IProductRepository>();
+
 
         public IUserIntRepository UsersInt => GetRepo<IUserIntRepository>();
         public IUserRoleIntRepository UserRolesInt => GetRepo<IUserRoleIntRepository>();

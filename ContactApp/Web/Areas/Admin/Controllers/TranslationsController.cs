@@ -34,7 +34,7 @@ namespace Web.Areas.Admin.Controllers
         // GET: Admin/Translations
         public ActionResult Index(bool viewHtml = false)
         {
-            var vm = new TranslationsIndexViewModel()
+            var vm = new TranslationIndexViewModel()
             {
                 //TODO: .Include(t => t.MultiLangString),
                 Translations = _uow.Translations.All.OrderBy(a => a.MultiLangStringId).ToList(),
@@ -47,8 +47,13 @@ namespace Web.Areas.Admin.Controllers
         // GET: Admin/Translations/Create
         public ActionResult Create()
         {
-            ViewBag.MultiLangStringId = new SelectList(_uow.MultiLangStrings.All, "MultiLangStringId", "Value");
-            return View();
+            var vm = new TranslationCreateEditViewModel()
+            {
+                MultiLangStrings =
+                    new SelectList(_uow.MultiLangStrings.All.Select(s => new {s.MultiLangStringId, s.Value}),
+                        nameof(MultiLangString.MultiLangStringId), nameof(MultiLangString.Value))
+            };
+            return View(vm);
         }
 
         // POST: Admin/Translations/Create
@@ -56,18 +61,19 @@ namespace Web.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Translation translation)
+        public ActionResult Create(TranslationCreateEditViewModel vm)
         {
+
             if (ModelState.IsValid)
             {
-                _uow.Translations.Add(translation);
+                _uow.Translations.Add(vm.Translation);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.MultiLangStringId = new SelectList(_uow.MultiLangStrings.All, "MultiLangStringId", "Value",
-                translation.MultiLangStringId);
-            return View(translation);
+            vm.MultiLangStrings =
+                new SelectList(_uow.MultiLangStrings.All.Select(s => new { s.MultiLangStringId, s.Value }),
+                    nameof(MultiLangString.MultiLangStringId), nameof(MultiLangString.Value));
+            return View(vm);
         }
 
         // GET: Admin/Translations/Edit/5
@@ -82,9 +88,15 @@ namespace Web.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MultiLangStringId = new SelectList(_uow.MultiLangStrings.All, "MultiLangStringId", "Value",
-                translation.MultiLangStringId);
-            return View(translation);
+
+            var vm = new TranslationCreateEditViewModel()
+            {
+                Translation = translation,
+                MultiLangStrings =
+                                new SelectList(_uow.MultiLangStrings.All.Select(s => new { s.MultiLangStringId, s.Value }),
+                                    nameof(MultiLangString.MultiLangStringId), nameof(MultiLangString.Value))
+            };
+            return View(vm);
         }
 
         // POST: Admin/Translations/Edit/5
@@ -92,17 +104,19 @@ namespace Web.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Translation translation)
+        [ValidateInput(false)]
+        public ActionResult Edit(TranslationCreateEditViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                _uow.Translations.Update(translation);
+                _uow.Translations.Update(vm.Translation);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
-            ViewBag.MultiLangStringId = new SelectList(_uow.MultiLangStrings.All, "MultiLangStringId", "Value",
-                translation.MultiLangStringId);
-            return View(translation);
+            vm.MultiLangStrings =
+                new SelectList(_uow.MultiLangStrings.All.Select(s => new {s.MultiLangStringId, s.Value}),
+                    nameof(MultiLangString.MultiLangStringId), nameof(MultiLangString.Value));
+            return View(vm);
         }
 
         // GET: Admin/Translations/Delete/5

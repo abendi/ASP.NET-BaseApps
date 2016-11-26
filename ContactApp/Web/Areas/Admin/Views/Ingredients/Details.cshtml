@@ -1,0 +1,73 @@
+﻿@model Domain.Ingredient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ingredient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientName.Value)
+        </dt>
+
+        <dd>
+            @Model.IngredientName
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasGluten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasGluten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAllergenic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAllergenic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAtDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAtDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedAtDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedAtDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IngredientId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

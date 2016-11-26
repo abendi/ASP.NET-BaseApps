@@ -15,6 +15,8 @@ namespace Interfaces.UOW
         T GetRepository<T>() where T : class;
 
         // standard autocreated repos, since we do not have any special methods in interfaces
+
+
         IContactTypeRepository ContactTypes { get; }
         IMultiLangStringRepository MultiLangStrings { get; }
         ITranslationRepository Translations { get; }
@@ -23,7 +25,9 @@ namespace Interfaces.UOW
         IPersonRepository Persons { get; }
         IContactRepository Contacts { get; }
         IArticleRepository Articles { get; }
-
+        ICategoryRepository Categories { get; }
+        IIngredientRepository Ingredients { get; }
+        IProductRepository Products { get; }
 
         // Identity, PK - string
         //IUserRepository Users { get; }

@@ -47,7 +47,9 @@ namespace DAL.Helpers
                 {typeof (IContactTypeRepository), dbContext => new ContactTypeRepository(dbContext)},
                 {typeof (IMultiLangStringRepository), dbContext => new MultiLangStringRepository(dbContext)},
                 {typeof (ITranslationRepository), dbContext => new TranslationRepsoitory(dbContext)},
-
+                {typeof (ICategoryRepository), dbContext => new CategoryRepository(dbContext)},
+                {typeof (IIngredientRepository), dbContext => new IngredientRepository(dbContext)},
+                {typeof (IProductRepository), dbContext => new ProductRepository(dbContext)},
                 {typeof (IPersonRepository), dbContext => new PersonRepository(dbContext)},
                 {typeof (IContactRepository), dbContext => new ContactRepository(dbContext)},
                 {typeof (IArticleRepository), dbContext => new ArticleRepository(dbContext)},

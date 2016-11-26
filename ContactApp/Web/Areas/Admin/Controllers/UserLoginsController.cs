@@ -11,7 +11,7 @@ using NLog;
 namespace Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class UserLoginsController : Controller
+    public class UserLoginsController : BaseController
     {
         private readonly NLog.ILogger _logger;
         private readonly string _instanceId = Guid.NewGuid().ToString();

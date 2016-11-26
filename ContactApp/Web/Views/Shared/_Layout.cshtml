@@ -29,7 +29,10 @@
     <title>@titleTag</title>
 
     <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+    <!--
+        <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+
+        -->
 
     <meta charset="UTF-8">
 
@@ -65,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink(Resources.Common.ApplicationName, "Index", new { controller = "Home"}, new { @class="navbar-brand page-scroll" })
+                @Html.ActionLink(Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand page-scroll" })
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,16 +77,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        @Html.ActionLink(Resources.Links.Home, "Index", "Home", new {area = ""}, new { @class = "page-scroll" })
+                        @Html.ActionLink(Resources.Links.Home, "Index", "Home", new { area = "" }, new { @class = "page-scroll" })
                     </li>
                     <li>
-                        @Html.ActionLink(Resources.Links.About, "About", "Home", new {area = ""}, new { @class = "page-scroll" })
+                        @Html.ActionLink(Resources.Links.About, "About", "Home", new { area = "" }, new { @class = "page-scroll" })
                     </li>
                     <li>
-                        @Html.ActionLink(Resources.Links.Products, "Menu",  "Home", new { area = "" }, new { @class = "page-scroll" })
+                        @Html.ActionLink(Resources.Links.Products, "Menu", "Home", new { area = "" }, new { @class = "page-scroll" })
                     </li>
                     <li>
-                        @Html.ActionLink(Resources.Links.Contact, "Contact", "Home", new { area = "" }, new {@class = "page-scroll"})
+                        @Html.ActionLink(Resources.Links.Contact, "Contact", "Home", new { area = "" }, new { @class = "page-scroll" })
                     </li>
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
@@ -91,7 +94,10 @@
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Contact Types", "Index", new { area = "Admin", controller = "ContactTypes" })</li>
-                                <li>@Html.ActionLink("Articles", "Index", new { area = "Admin", controller = "Articles" })</li>
+                                <li>@Html.ActionLink("Articles", "Index", new {area = "Admin", controller = "Articles"})</li>
+                                <li>@Html.ActionLink("Categories", "Index", new {area = "Admin", controller = "Categories"})</li>
+                                <li>@Html.ActionLink("Products", "Index", new {area = "Admin", controller = "Products"})</li>
+                                <li>@Html.ActionLink("Ingredients", "Index", new { area = "Admin", controller = "Ingredients" })</li>
                                 <li class="divider"></li>
                                 <li>@Html.ActionLink("MultiLangStrings", "Index", new { area = "Admin", controller = "MultiLangStrings" })</li>
                                 <li>@Html.ActionLink("Translations", "Index", new { area = "Admin", controller = "Translations" })</li>
@@ -117,52 +123,54 @@
         <!-- /.container-fluid -->
     </nav>
     <div id="page-content">
-        <br/>
+        <br />
         <section class="box-content">
             <div class="container">
                 @RenderBody()
             </div>
         </section>
     </div>
-<footer>
-    <div class="wrap-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-footer col-md-6">
-                    <h2 class="footer-title">About Us</h2>
-                    <div class="textwidget">
-                        Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br>
-                        Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non.
+    <footer>
+        <div class="wrap-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-footer col-md-6">
+                        <h2 class="footer-title">About Us</h2>
+                        <div class="textwidget">
+                            Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br>
+                            Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non.
+                        </div>
                     </div>
-                </div>
-                <div class="col-footer col-md-6">
-                    <h2 class="footer-title">CONTACT</h2>
+                    <div class="col-footer col-md-6">
+                        <h2 class="footer-title">CONTACT</h2>
+                    <!--
                     <div class='embed-container maps'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="100%" height="200px" frameborder="0" style="border: 0"></iframe>
                     </div>
-                    <span>
+                    -->
+                        <span>
                             JL.Kemacetan timur no.23. block.Q3<br>
                             Jakarta-Indonesia
                         </span>
-                    <span>
+                        <span>
                             +6221 888 888 90 <br>
                             +6221 888 88891
                         </span>
-                    <span>info@yourdomain.com</span>
+                        <span>info@yourdomain.com</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bottom-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>&copy @DateTime.Now.Year - @Resources.Common.ApplicationName</p>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>&copy @DateTime.Now.Year - @Resources.Common.ApplicationName</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

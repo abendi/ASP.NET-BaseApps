@@ -1,0 +1,19 @@
+﻿@model Web.ViewModels.MenuIndexViewModel
+@{
+    ViewBag.Title = "Menu";
+}
+
+@foreach (var item in Model.Categories)
+{
+    <div class="heading">
+        <h2>
+            <span class="hr">@item.CategoryName</span>
+        </h2>
+    </div>
+    foreach (var product in item.Products)
+    {
+        @product.ProductName
+        <br/>
+    }
+
+}

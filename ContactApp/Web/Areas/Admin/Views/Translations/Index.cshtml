@@ -1,5 +1,5 @@
 ﻿@using System.Runtime.InteropServices.ComTypes
-@model Web.Areas.Admin.ViewModels.TranslationsIndexViewModel
+@model Web.Areas.Admin.ViewModels.TranslationIndexViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,6 +8,7 @@
 <h2>Index</h2>
 
 <p>
+    @Html.ActionLink("Create translation", "Create") |
     @Html.ActionLink("Toggle html encoding", "Index", new {viewHtml = !Model.ViewHtml})
 </p>
 <table class="table">

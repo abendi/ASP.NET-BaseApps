@@ -1,0 +1,77 @@
+﻿@model Web.Areas.Admin.ViewModels.ProductIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.FirstOrDefault().ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.FirstOrDefault().ProductDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.FirstOrDefault().BasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.FirstOrDefault().Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.FirstOrDefault().Ingredients)
+        </th>
+        <th>
+            Image
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Products) {
+    <tr>
+        <td>
+            @item.ProductName
+        </td>
+        <td>
+            @item.ProductDescription.Value
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasePrice)
+        </td>
+        <td>
+            @item.Category.CategoryName
+        </td>
+        <td>
+            @for (int i = 0; i < item.Ingredients.Count; i++)
+            {
+                if (i < item.Ingredients.Count - 1)
+                {
+                    @item.Ingredients[i].IngredientName@:,
+                }
+                else
+                {
+                    @item.Ingredients[i].IngredientName
+                }
+            }
+        </td>
+        <td>
+           @{
+               Url.Content("~/Content/Uploads");
+           }
+            @if (item.Image != null)
+            {
+                <img src="@item.Image.ImageUrl"/>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.ProductId}) |
+            @Html.ActionLink("Details", "Details", new {id = item.ProductId}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.ProductId})
+        </td>
+    </tr>
+}
+
+</table>

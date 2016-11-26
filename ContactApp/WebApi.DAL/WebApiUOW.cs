@@ -48,6 +48,13 @@ namespace WebApi.DAL
                         httpClient,
                         ConfigurationManager.AppSettings["WebApi_EndPoint_Articles"],
                         authenticationManager)
+                },
+                {typeof(IUserIntRepository),
+                    (httpClient, authenticationManager) =>
+                    new UserIntRepository(
+                        httpClient,
+                        ConfigurationManager.AppSettings["WebApi_EndPoint_Articles"],
+                        authenticationManager)
                 }
             };
         }

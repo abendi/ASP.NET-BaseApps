@@ -138,7 +138,7 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new UserInt {UserName = model.Email, Email = model.Email};
+                var user = new UserInt {UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -152,7 +152,11 @@ namespace Web.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                if (_userManager.FindByEmailAsync(model.Email) != null)
+                {
+                    ModelState.AddModelError("", "E-mail is already in use.");
+                }
+               //AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form

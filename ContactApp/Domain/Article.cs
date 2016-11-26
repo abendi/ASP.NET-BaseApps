@@ -9,7 +9,7 @@ using Resources;
 
 namespace Domain
 {
-    public class Article
+    public class Article : BaseEntity
     {
         public int ArticleId { get; set; }
 

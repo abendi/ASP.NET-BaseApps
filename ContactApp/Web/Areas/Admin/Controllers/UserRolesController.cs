@@ -15,7 +15,7 @@ using Web.Areas.Admin.ViewModels;
 namespace Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class UserRolesController : Controller
+    public class UserRolesController : BaseController
     {
         //private readonly DataBaseContext _db = new DataBaseContext();
 

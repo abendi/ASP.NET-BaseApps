@@ -1,6 +1,6 @@
 ﻿@model Domain.Article
 @{
-    ViewBag.Title = Model.ArticleHeadline;
+    ViewBag.Title = Model.ArticleHeadline.Value;
 }
 <br/>
 @Html.Raw(Model.ArticleBody)

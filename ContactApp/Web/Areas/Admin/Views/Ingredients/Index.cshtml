@@ -1,0 +1,43 @@
+﻿@model Web.Areas.Admin.ViewModels.IngredientIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredients.FirstOrDefault().IngredientName)
+        </th>
+        <th>
+           @Html.DisplayNameFor(model => model.Ingredients.FirstOrDefault().HasGluten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredients.FirstOrDefault().IsAllergenic)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Ingredients) {
+    <tr>
+        <td>
+            @item.IngredientName
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasGluten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAllergenic)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IngredientId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IngredientId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IngredientId })
+        </td>
+    </tr>
+}
+
+</table>

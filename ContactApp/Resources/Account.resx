@@ -171,4 +171,16 @@
   <data name="LoginFailed" xml:space="preserve">
     <value>E-mail address or password is incorrect</value>
   </data>
+  <data name="ViewModel_FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="ViewModel_FirstNameRequired" xml:space="preserve">
+    <value>First name is required</value>
+  </data>
+  <data name="ViewModel_LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="ViewModel_LastNameRequired" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
 </root>

@@ -48,6 +48,7 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -234,9 +235,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IngredientsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\MultiLangStringsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SystemLogController.cs" />
     <Compile Include="Areas\Admin\Controllers\TranslationsController.cs" />
@@ -245,9 +251,12 @@
     <Compile Include="Areas\Admin\Controllers\UserRolesController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\ViewModels\ArticleViewModels.cs" />
+    <Compile Include="Areas\Admin\ViewModels\CategoryViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\ContactTypeViewModels.cs" />
+    <Compile Include="Areas\Admin\ViewModels\IngredientViewModels.cs" />
+    <Compile Include="Areas\Admin\ViewModels\ProductViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\SystemLogViewModels.cs" />
-    <Compile Include="Areas\Admin\ViewModels\TranslationsViewModels.cs" />
+    <Compile Include="Areas\Admin\ViewModels\TranslationViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\UserRoleViewModels.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -313,6 +322,7 @@
     <Compile Include="ViewModels\HelperDemoViewModels.cs" />
     <Compile Include="ViewModels\HomeViewModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\MenuViewModels.cs" />
     <Compile Include="ViewModels\PersonViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2117,6 +2127,21 @@
     <Content Include="Content\font-awesome-4.6.1\scss\_screen-reader.scss" />
     <Content Include="Content\font-awesome-4.6.1\scss\_stacked.scss" />
     <Content Include="Content\font-awesome-4.6.1\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ingredients\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Ingredients\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Ingredients\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Ingredients\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Ingredients\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2363,6 +2388,7 @@
     <Content Include="Views\FDemo\DeleteFile.cshtml" />
     <Content Include="Views\FDemo\UploadFiles.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
@@ -2410,10 +2436,6 @@
     <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{7308994f-36c4-49c2-8421-215aff278799}</Project>
       <Name>Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebApi.DAL\WebApi.DAL.csproj">
-      <Project>{97F822BC-34F0-4E2A-8BD0-A1EE6C35169C}</Project>
-      <Name>WebApi.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

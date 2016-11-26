@@ -17,6 +17,7 @@ using Web.Helpers;
 
 namespace Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContactTypesController : BaseController
     {
 

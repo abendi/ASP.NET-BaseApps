@@ -43,6 +43,7 @@ namespace Web
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
+                ExpireTimeSpan = TimeSpan.FromHours(1),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
@@ -54,6 +55,7 @@ namespace Web
                                 user.GenerateUserIdentityAsync(manager),
                             // delete old cookies from browser first, otherwise youll get string conversion error
                             getUserIdCallback: (id) => id.GetUserId<int>())
+                            
                 }
             });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);

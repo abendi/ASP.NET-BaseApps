@@ -32,6 +32,15 @@ namespace Web.Controllers
             return View();
         }
 
+        public ActionResult Menu()
+        {
+            var vm = new MenuIndexViewModel()
+            {
+                Categories = _uow.Categories.AllIncluding(p => p.Products)
+            };
+            return View(vm);
+        }
+
         public ActionResult ApiDemo()
         {
             return View();

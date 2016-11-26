@@ -4,12 +4,9 @@
     <div class="container">
         <div class="heading">
             <h2>
-                <span class="hr">Welcome!</span>
+                <span class="hr">@Html.Raw(Model.Article.ArticleHeadline)</span>
             </h2>
-            <div class="intro">Nulla hendrerit risus auctor, sodales lacus in, facilisis enim. Curabitur iaculis lacus leo,<br /> ut consequat tellus posuere vel.</div>
-        </div>
-        <div class="row">
-            <p>Proin gravida nibh vel velit auctor aliquet Aenean sollicitudin, sagittis sem nibh id elit. Duis sed odio sit.amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+            <div class="intro">@Html.Raw(Model.Article.ArticleBody)</div>
         </div>
     </div>
 </section>
