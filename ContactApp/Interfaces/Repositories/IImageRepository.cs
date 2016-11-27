@@ -7,8 +7,7 @@ using Domain;
 
 namespace Interfaces.Repositories
 {
-    public interface IProductRepository : IBaseRepository<Product>
+    public interface IImageRepository : IBaseRepository<Image>
     {
-        void DeleteWithImage(int productId);
     }
 }

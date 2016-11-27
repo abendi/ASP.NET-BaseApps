@@ -50,6 +50,7 @@ namespace DAL.Helpers
                 {typeof (ICategoryRepository), dbContext => new CategoryRepository(dbContext)},
                 {typeof (IIngredientRepository), dbContext => new IngredientRepository(dbContext)},
                 {typeof (IProductRepository), dbContext => new ProductRepository(dbContext)},
+                {typeof (IImageRepository), dbContext => new ImageRepository(dbContext)},
                 {typeof (IPersonRepository), dbContext => new PersonRepository(dbContext)},
                 {typeof (IContactRepository), dbContext => new ContactRepository(dbContext)},
                 {typeof (IArticleRepository), dbContext => new ArticleRepository(dbContext)},

@@ -49,6 +49,7 @@
     <Compile Include="Repositories\IContactRepository.cs" />
     <Compile Include="Repositories\IBaseRepository.cs" />
     <Compile Include="Repositories\IContactTypeRepository.cs" />
+    <Compile Include="Repositories\IImageRepository.cs" />
     <Compile Include="Repositories\IIngredientRepository.cs" />
     <Compile Include="Repositories\IMultiLangStringRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />

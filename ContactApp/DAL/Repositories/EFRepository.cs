@@ -151,6 +151,20 @@ namespace DAL.Repositories
             return keyNames;
         }
 
+        public void DeleteEntity(Object entity, DbSet dbSet)
+        {
+            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            if (dbEntityEntry.State != EntityState.Deleted)
+            {
+                dbEntityEntry.State = EntityState.Deleted;
+            }
+            else
+            {
+                dbSet.Attach(entity);
+                dbSet.Remove(entity);
+            }
+        }
+
         //public void UpdateOrInsert(T entity)
         //{
         //	var entityKeys = GetKeyNames(entity);

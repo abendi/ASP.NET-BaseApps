@@ -29,6 +29,8 @@ namespace Interfaces.UOW
         IIngredientRepository Ingredients { get; }
         IProductRepository Products { get; }
 
+        IImageRepository Images { get; }
+
         // Identity, PK - string
         //IUserRepository Users { get; }
         //IUserRoleRepository UserRoles { get; }

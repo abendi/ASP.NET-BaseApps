@@ -1,0 +1,36 @@
+﻿@model Web.Areas.Admin.ViewModels.ImageIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Upload new", "Upload")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Images.FirstOrDefault().ImageUrl)
+        </th>
+        <th>
+            Preview
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Images) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageUrl)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Content/Uploads/" + item.ImageUrl)" style="width: 150px; height: 150px;"/>
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.ImageId }) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.ImageId})
+        </td>
+    </tr>
+}
+
+</table>

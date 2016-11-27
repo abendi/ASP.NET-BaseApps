@@ -66,7 +66,7 @@ namespace DAL
         public IDbSet<Category> Categories { get; set; }
         public IDbSet<Product> Products { get; set; }
         public IDbSet<Ingredient> Ingredients { get; set; }  
-
+        public IDbSet<Image> Images { get; set; }
 
         // Identity tables, PK - string
         //public IDbSet<Role> Roles { get; set; }
@@ -160,6 +160,5 @@ namespace DAL
             _logger.Info("Disposing: " + disposing + " _instanceId: " + _instanceId);
             base.Dispose(disposing);
         }
-
     }
 }

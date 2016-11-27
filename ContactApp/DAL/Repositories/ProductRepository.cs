@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,13 @@ namespace DAL.Repositories
     {
         public ProductRepository(IDbContext dbContext) : base(dbContext)
         {
+        }
+
+        public void DeleteWithImage(int productId)
+        {
+            var product = DbSet.Find(productId);
+
+            DeleteEntity(product.Image, DbContext.Set<Image>());
         }
     }
 }

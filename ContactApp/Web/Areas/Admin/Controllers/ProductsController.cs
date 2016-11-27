@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -54,7 +55,8 @@ namespace Web.Areas.Admin.Controllers
             var vm = new ProductCreateEditViewModel()
             {
                 Categories = new SelectList(_uow.Categories.All.Select(s => new { s.CategoryId, s.CategoryName }), nameof(Category.CategoryId), nameof(Category.CategoryName)),
-                Ingredients = new MultiSelectList(_uow.Ingredients.All.Select(s => new { s.IngredientId, s.IngredientName }), nameof(Ingredient.IngredientId), nameof(Ingredient.IngredientName))
+                Ingredients = new MultiSelectList(_uow.Ingredients.All.Select(s => new { s.IngredientId, s.IngredientName }), nameof(Ingredient.IngredientId), nameof(Ingredient.IngredientName)),
+                ImageVM = new ImageCreateViewModel()
             };
             return View(vm);
         }
@@ -82,6 +84,30 @@ namespace Web.Areas.Admin.Controllers
                         vm.Product.Ingredients.Add(ingredient);
                     }
 
+                }
+
+                if (vm.ImageVM.Attachment != null && vm.ImageVM.Attachment.ContentLength > 0)
+                {
+                    if (!vm.ImageVM.Attachment.ContentType.ToLower().StartsWith("image"))
+                    {
+                        ModelStateHelper.AddFor<ImageCreateViewModel>(ModelState, s => s.Attachment,
+                            "File is not of image type");
+                        return View();
+                    }
+                    try
+                    {
+                        ImageHelper.SaveAs(vm.ImageVM.Attachment,
+                            vm.ImageVM.ImageUrl);
+                    }
+                    catch
+                    {
+                        ModelState.AddModelError("", "Something went wrong!");
+                        return View();
+                    }
+                    vm.Product.Image = new Image()
+                    {
+                        ImageUrl = vm.ImageVM.ImageUrl + Path.GetExtension(vm.ImageVM.Attachment.FileName)
+                    };
                 }
                 _uow.Products.Add(vm.Product);
                 _uow.Commit();
@@ -177,7 +203,9 @@ namespace Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            _uow.Products.Delete(id);
+            var p = _uow.Products.GetById(id);
+            ImageHelper.Delete(p.Image.ImageUrl);
+            _uow.Products.DeleteWithImage(id);
             _uow.Commit();
             return RedirectToAction("Index");
         }

@@ -60,18 +60,5 @@ namespace DAL.Repositories
             Delete(article);
         }
 
-        private void DeleteEntity(Object entity, DbSet dbSet)
-        {
-            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
-            if (dbEntityEntry.State != EntityState.Deleted)
-            {
-                dbEntityEntry.State = EntityState.Deleted;
-            }
-            else
-            {
-                dbSet.Attach(entity);
-                dbSet.Remove(entity);
-            }
-        }
     }
 }

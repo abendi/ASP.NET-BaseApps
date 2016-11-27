@@ -24,6 +24,8 @@ namespace Web.Areas.Admin.ViewModels
 
         public decimal ProductBasePrice { get; set; }
 
+        public ImageCreateViewModel ImageVM { get; set; }
+
         public int ProductCategoryId { get; set; }
 
         public SelectList Categories { get; set; }
@@ -32,4 +34,6 @@ namespace Web.Areas.Admin.ViewModels
         public List<int> IngredientsIds { get; set; }
         public MultiSelectList Ingredients { get; set; }
     }
+
+    
 }

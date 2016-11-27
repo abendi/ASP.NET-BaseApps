@@ -69,7 +69,7 @@ namespace DAL
         public ICategoryRepository Categories => GetRepo<ICategoryRepository>();
         public IIngredientRepository Ingredients => GetRepo<IIngredientRepository>();
         public IProductRepository Products => GetRepo<IProductRepository>();
-
+        public IImageRepository Images => GetRepo<IImageRepository>();
 
         public IUserIntRepository UsersInt => GetRepo<IUserIntRepository>();
         public IUserRoleIntRepository UserRolesInt => GetRepo<IUserRoleIntRepository>();

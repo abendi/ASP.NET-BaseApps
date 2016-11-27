@@ -58,12 +58,9 @@
             }
         </td>
         <td>
-           @{
-               Url.Content("~/Content/Uploads");
-           }
             @if (item.Image != null)
             {
-                <img src="@item.Image.ImageUrl"/>
+                <img src="@Url.Content("~/Content/Uploads/" + item.Image.ImageUrl)" style="width: 150px; height: 150px;"/>
             }
         </td>
         <td>

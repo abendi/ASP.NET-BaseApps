@@ -1,0 +1,25 @@
+﻿@model Web.Areas.Admin.ViewModels.ImageCreateViewModel
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Attachment, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(model => model.Attachment, new { id = "file", type = "file" })
+        @Html.ValidationMessageFor(model => model.Attachment, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new {@class = "control-label col-md-2"})
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.ImageUrl, new {htmlAttributes = new {@class = "form-control", id = "imageName"}})
+        @Html.ValidationMessageFor(model => model.ImageUrl, "", new {@class = "text-danger"})
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#file").change(function () {
+        var fullFileName = $("#file").val();
+        var fileExt = fullFileName.split(".").pop();
+        var fileName = fullFileName.replace("." + fileExt, "");
+        $("#imageName").val(fileName);
+    });
+</script>
