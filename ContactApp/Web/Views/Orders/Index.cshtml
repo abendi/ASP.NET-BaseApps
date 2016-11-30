@@ -1,0 +1,54 @@
+﻿@model Web.ViewModels.OrderIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderPlacedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderForDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderCompletedDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Orders)
+    {
+        <tr>
+            <td>
+                @item.OrderId
+            </td>
+            <td>
+                @item.OrderPlacedDate.ToString("g")
+            </td>
+            <td>
+                @item.OrderForDate.ToString("g")
+            </td>
+            <td>
+                @item.OrderStatus.OrderStatusName
+            </td>
+            <td>
+                @if (item.OrderCompletedDate.HasValue)
+                {
+                    @item.OrderCompletedDate.Value.ToString("g")
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Invoice", "Invoice", new {id = item.InvoiceId})
+            </td>
+        </tr>
+    }
+
+</table>

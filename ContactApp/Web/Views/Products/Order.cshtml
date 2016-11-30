@@ -1,0 +1,128 @@
+﻿@using System.Threading
+@using HtmlHelpers
+@model Web.ViewModels.ProductOrderViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Product.ProductId)
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.BasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.OrderForDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.ProductQuantity) (kg)
+            </th>
+            <th>
+                Total sum (€)
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                @Model.Product.ProductName
+            </td>
+            <td>
+                @Model.Product.Category.CategoryName
+            </td>
+            <td>
+                @Model.Product.ProductDescription
+            </td>
+            <td>
+                <span id="@nameof(Model.Product.BasePrice)">@Html.DisplayFor(model => model.Product.BasePrice)</span> € / kg
+            </td>
+            <td id="dateCell">
+                <div class="form-group">
+                    <div class="input-group date" id="orderDate">
+                        <input type="text" name="@nameof(Model.Order).@nameof(Model.Order.OrderForDate)" class="form-control" autocomplete="off" readonly="" id="orderDateVal"/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Order.OrderForDate, "", new { @class = "text-danger" })
+                </div>
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Order.ProductQuantity)
+            </td>
+            <td>
+                <span id="total">
+                    @(((decimal)Model.Order.ProductQuantity*Model.Product.BasePrice).ToString())
+                </span>
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-6">
+            <input type="submit" value="Order" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+
+@section Scripts
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('#orderDateVal').val('');
+            jQuery('#orderDate').datetimepicker({
+                locale: currentCultureCode,
+                stepping: 30,
+                ignoreReadonly: true,
+                allowInputToggle: true,
+                sideBySide: true,
+                daysOfWeekDisabled: [0, 6],
+                disabledHours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 24],
+                minDate: moment().add(3, 'days'),
+                maxDate: moment().add(1, 'months')
+            });
+
+            $('#@nameof(Model.Order)_@nameof(Model.Order.ProductQuantity)').on('keyup', function () {
+                var tot = $('#@nameof(Model.Product.BasePrice)').text() * this.value.replace(',', '.');
+                var fixed = tot.toFixed(2);
+                $('#total').text(fixed);
+            });
+
+        });
+
+        function round(value, exp) {
+            if (typeof exp === 'undefined' || +exp === 0)
+                return Math.round(value);
+
+            value = +value;
+            exp = +exp;
+
+            if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0))
+                return NaN;
+
+            value = value.toString().split('e');
+            value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
+
+            value = value.toString().split('e');
+            return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
+        }
+
+    </script>
+}

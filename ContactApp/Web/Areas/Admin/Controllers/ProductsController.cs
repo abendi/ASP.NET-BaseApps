@@ -203,8 +203,11 @@ namespace Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var p = _uow.Products.GetById(id);
-            ImageHelper.Delete(p.Image.ImageUrl);
+            var product = _uow.Products.GetById(id);
+            if (product.Image != null)
+            {
+                ImageHelper.Delete(product.Image.ImageUrl);
+            }
             _uow.Products.DeleteWithImage(id);
             _uow.Commit();
             return RedirectToAction("Index");

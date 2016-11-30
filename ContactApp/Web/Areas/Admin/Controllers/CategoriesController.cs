@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using DAL;
 using Domain;
 using Interfaces.UOW;
+using Microsoft.AspNet.Identity;
 using NLog;
 using Web.Areas.Admin.ViewModels;
 using Web.Helpers;

@@ -1,0 +1,7 @@
+﻿@model Int32?
+@{
+    ViewBag.Title = "OrderSubmitted";
+}
+
+<h2>Your order has been submitted.</h2> @Html.ActionLink("See invoice", "Invoice", new {controller = "Orders", id = Model.Value})
+

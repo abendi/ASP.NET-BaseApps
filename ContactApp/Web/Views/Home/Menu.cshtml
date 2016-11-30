@@ -5,15 +5,40 @@
 
 @foreach (var item in Model.Categories)
 {
-    <div class="heading">
-        <h2>
-            <span class="hr">@item.CategoryName</span>
-        </h2>
-    </div>
-    foreach (var product in item.Products)
+    if (item.Products.Count > 0)
     {
-        @product.ProductName
-        <br/>
-    }
+        <div class="heading">
+            <h2>
+                <span class="hr">@item.CategoryName</span>
+            </h2>
+        </div>
+        <div class="row">
+            @foreach (var product in item.Products)
+            {
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="item-container">
+                        <a href="@Url.Action("Details", "Products", new {id = product.ProductId})">
+                            <div class="item-caption">
+                                <div class="item-caption-inner">
+                                    <div class="item-caption-inner1">
+                                        <h3>@Html.DisplayFor(p => product.BasePrice) € / kg</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (product.Image != null)
+                            {
+                                <img src="@Url.Content("~/Content/Uploads/" + product.Image.ImageUrl)"/>
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/img/menu-1.jpg")"/>
+                            }
+                        </a>
+                        <h5>@product.ProductName</h5>
+                    </div>
 
+                </div>
+            }
+        </div>
+    }
 }

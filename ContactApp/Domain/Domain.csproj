@@ -61,7 +61,10 @@
     <Compile Include="Identity\UserRole.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Ingredient.cs" />
+    <Compile Include="Invoice.cs" />
     <Compile Include="MultiLangString.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderStatus.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

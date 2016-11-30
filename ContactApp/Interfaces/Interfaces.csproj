@@ -51,7 +51,10 @@
     <Compile Include="Repositories\IContactTypeRepository.cs" />
     <Compile Include="Repositories\IImageRepository.cs" />
     <Compile Include="Repositories\IIngredientRepository.cs" />
+    <Compile Include="Repositories\IInvoiceRepository.cs" />
     <Compile Include="Repositories\IMultiLangStringRepository.cs" />
+    <Compile Include="Repositories\IOrderRepository.cs" />
+    <Compile Include="Repositories\IOrderStatusRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />

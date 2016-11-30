@@ -23,8 +23,15 @@
                     @User.Identity.GetUserName() <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
+                    @if (!User.IsInRole("Admin"))
+                    {
+                        <li>
+                            @Html.ActionLink("My orders", "MyOrders", new {area = "", controller = "Orders"})
+                        </li>
+                        <li class="divider"></li>
+                    }
                     <li>
-                        @Html.ActionLink(@Resources.Common.ManageAccount, "Index", new { area = "", controller = "Manage" })
+                        @Html.ActionLink(@Resources.Common.ManageAccount, "Index", new {area = "", controller = "Manage"})
                     </li>
                     <li>
                         <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Common.LogOff</a>

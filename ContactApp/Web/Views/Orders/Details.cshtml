@@ -1,0 +1,88 @@
+﻿@model Web.ViewModels.InvoiceDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.InvoiceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.InvoiceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.InvoicePaymentReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.InvoicePaymentReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.InvoicePaymentReceivedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.InvoicePaymentReceivedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.InvoiceTotalSum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.InvoiceTotalSum)
+        </dd>
+    </dl>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.Products.FirstOrDefault().ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.Products.FirstOrDefault().ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.ProductQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order.Products.FirstOrDefault().BasePrice)
+            </th>
+            <th>
+                Sum
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Order.Products)
+        {
+            <tr>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    @item.ProductDescription
+                </td>
+                <td>
+                    @Model.Order.ProductQuantity
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.BasePrice)
+                </td>
+                <td>
+                    @((item.BasePrice * (decimal)@Model.Order.ProductQuantity).ToString("0.00"))
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Show all orders", "MyOrders")
+</p>

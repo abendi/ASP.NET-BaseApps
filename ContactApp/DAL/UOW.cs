@@ -70,12 +70,17 @@ namespace DAL
         public IIngredientRepository Ingredients => GetRepo<IIngredientRepository>();
         public IProductRepository Products => GetRepo<IProductRepository>();
         public IImageRepository Images => GetRepo<IImageRepository>();
+        public IOrderRepository Orders => GetRepo<IOrderRepository>();
+        public IOrderStatusRepository OrderStatuses => GetRepo<IOrderStatusRepository>();
+        public IInvoiceRepository Invoices => GetRepo<IInvoiceRepository>();
 
         public IUserIntRepository UsersInt => GetRepo<IUserIntRepository>();
         public IUserRoleIntRepository UserRolesInt => GetRepo<IUserRoleIntRepository>();
         public IRoleIntRepository RolesInt => GetRepo<IRoleIntRepository>();
         public IUserClaimIntRepository UserClaimsInt => GetRepo<IUserClaimIntRepository>();
         public IUserLoginIntRepository UserLoginsInt => GetRepo<IUserLoginIntRepository>();
+
+
 
         // calling standard EF repo provider
         private IBaseRepository<T> GetStandardRepo<T>() where T : class

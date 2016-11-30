@@ -29,10 +29,9 @@
     <title>@titleTag</title>
 
     <!-- Custom Fonts -->
-    <!--
-        <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
 
-        -->
+    <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+
 
     <meta charset="UTF-8">
 
@@ -124,12 +123,14 @@
         <!-- /.container-fluid -->
     </nav>
     <div id="page-content">
-        <br />
-        <section class="box-content">
-            <div class="container">
-                @RenderBody()
-            </div>
-        </section>
+        <br/>
+        <div id="main-content">
+            <section class="box-content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
     </div>
     <footer>
         <div class="wrap-footer">

@@ -28,8 +28,10 @@ namespace Interfaces.UOW
         ICategoryRepository Categories { get; }
         IIngredientRepository Ingredients { get; }
         IProductRepository Products { get; }
-
         IImageRepository Images { get; }
+        IOrderRepository Orders { get; }
+        IOrderStatusRepository OrderStatuses { get; }
+        IInvoiceRepository Invoices { get; }
 
         // Identity, PK - string
         //IUserRepository Users { get; }

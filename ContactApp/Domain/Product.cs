@@ -24,6 +24,7 @@ namespace Domain
 
         public virtual MultiLangString ProductDescription { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:0.##}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "money")]
         public decimal BasePrice { get; set; }
 
@@ -33,8 +34,9 @@ namespace Domain
 
         [ForeignKey(nameof(Image))]
         public int? ImageId { get; set; }
-
         public virtual Image Image { get; set; }
-        public virtual List<Ingredient> Ingredients { get; set; } = new List<Ingredient>(); 
+        public virtual List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+        
+        public virtual List<Order> Orders { get; set; } = new List<Order>();  
     }
 }

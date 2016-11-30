@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Optimization;
 
 namespace Web
@@ -66,7 +67,6 @@ namespace Web
             bundles.Add(new StyleBundle("~/Content/sitecss").Include(
                 "~/Content/style.css"
                 ));
-
             BundleTable.EnableOptimizations = false;
         }
     }

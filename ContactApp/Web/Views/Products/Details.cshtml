@@ -1,0 +1,39 @@
+﻿@model Domain.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="clearfix box-archive">
+            <div class="col-md-4">
+                @if (Model.Image != null)
+                {
+                    <img src="@Url.Content("~/Content/Uploads/" + Model.Image.ImageUrl)"/>
+                }
+                else
+                {
+                    <img src="@Url.Content("~/Content/img/menu-12.jpg")" />
+                }
+            </div>
+            <div class="col-md-push-1 col-md-6">
+                <div class="wrapper">
+                    <h2>@Model.ProductName</h2>
+                    <p>@Model.ProductDescription</p>
+                    <br/>
+                    @Html.DisplayFor(m => m.BasePrice) € / kg
+                    <br/>
+                    <h5>@Html.DisplayNameFor(m => m.Ingredients):</h5>
+                    <ul>
+                        @foreach (var i in Model.Ingredients)
+                        {
+                            <li>@i.IngredientName</li>
+                        }
+                    </ul>
+                    @Html.ActionLink("Order", "Order", new {id = Model.ProductId}, new {@class = "btn btn-primary"})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

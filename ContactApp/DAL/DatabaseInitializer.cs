@@ -20,8 +20,8 @@ namespace DAL
             context.Configuration.AutoDetectChangesEnabled = false;
 
             SeedIdentity(context);
-            SeedArticles(context);
-            SeedContacts(context);
+            //SeedArticles(context);
+            //SeedContacts(context);
 
 
             // restore state

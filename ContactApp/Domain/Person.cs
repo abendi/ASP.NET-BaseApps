@@ -31,7 +31,7 @@ namespace Domain
         // https://msdn.microsoft.com/en-us/library/ms186724.aspx#DateandTimeDataTypes
         // look also into DBContext, SQL is forced to use certain fieldtypes according to this attribute
         // this is only tested against MS SQL / LocalDb
-        // in views, use custom htmlhelpers - Html.DateTimeEditorFor, DateEditorFor, TimeEditorFor
+        // in views, use custom htmlhelpers - Html.For, DateEditorFor, TimeEditorFor
 
         [DataType(DataType.DateTime)]
         public DateTime DateTime { get; set; }

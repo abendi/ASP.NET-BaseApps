@@ -68,6 +68,9 @@ namespace DAL
         public IDbSet<Ingredient> Ingredients { get; set; }  
         public IDbSet<Image> Images { get; set; }
 
+        public IDbSet<Order> Orders { get; set; } 
+        public IDbSet<OrderStatus> OrderStatuses { get; set; }
+         
         // Identity tables, PK - string
         //public IDbSet<Role> Roles { get; set; }
         //public IDbSet<UserClaim> UserClaims { get; set; }

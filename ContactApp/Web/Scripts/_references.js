@@ -815,6 +815,7 @@
 /// <reference path="cbpanimatedheader.js" />
 /// <reference path="classie.js" />
 /// <reference path="html5shiv.js" />
+/// <reference path="jquery.datetimepicker.js" />
 /// <reference path="jquery.easing.min.js" />
 /// <reference path="jquery.validate.min.js" />
 /// <reference path="jquery.validate.unobtrusive.js" />
