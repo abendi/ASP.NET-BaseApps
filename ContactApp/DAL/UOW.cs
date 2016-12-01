@@ -73,7 +73,7 @@ namespace DAL
         public IOrderRepository Orders => GetRepo<IOrderRepository>();
         public IOrderStatusRepository OrderStatuses => GetRepo<IOrderStatusRepository>();
         public IInvoiceRepository Invoices => GetRepo<IInvoiceRepository>();
-
+        public IQuestionRepository Questions => GetRepo<IQuestionRepository>();
         public IUserIntRepository UsersInt => GetRepo<IUserIntRepository>();
         public IUserRoleIntRepository UserRolesInt => GetRepo<IUserRoleIntRepository>();
         public IRoleIntRepository RolesInt => GetRepo<IRoleIntRepository>();

@@ -123,6 +123,18 @@
   <data name="ArticleHeadline" xml:space="preserve">
     <value>Pealkiri</value>
   </data>
+  <data name="ArticleName" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Kategooria nimetus</value>
+  </data>
+  <data name="CategoryNameId" xml:space="preserve">
+    <value>Kategooria ID</value>
+  </data>
+  <data name="CategoryProducts" xml:space="preserve">
+    <value>Tooted</value>
+  </data>
   <data name="FirstLastName" xml:space="preserve">
     <value>Ees-, perekonnanimi</value>
   </data>
@@ -131,6 +143,33 @@
   </data>
   <data name="FirstnameLengthError" xml:space="preserve">
     <value>Eesnimi on liiga pikk.</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Pildi nimi</value>
+  </data>
+  <data name="ImageUrlInvalid" xml:space="preserve">
+    <value>Sisaldab mittelubatud sümboleid</value>
+  </data>
+  <data name="IngredientHasGluten" xml:space="preserve">
+    <value>Sisaldab gluteeni</value>
+  </data>
+  <data name="IngredientIsAllergenic" xml:space="preserve">
+    <value>Sisaldab allergeene</value>
+  </data>
+  <data name="IngredientName" xml:space="preserve">
+    <value>Koostisosa</value>
+  </data>
+  <data name="IngredientNameId" xml:space="preserve">
+    <value>Koostisosa ID</value>
+  </data>
+  <data name="InvoiceId" xml:space="preserve">
+    <value>Arve nr.</value>
+  </data>
+  <data name="InvoicePaymentReceived" xml:space="preserve">
+    <value>Makse kuupäev</value>
+  </data>
+  <data name="InvoiceTotalSum" xml:space="preserve">
+    <value>Summa kokku</value>
   </data>
   <data name="LastFirstName" xml:space="preserve">
     <value>Pere-, eesnimi</value>
@@ -141,6 +180,42 @@
   <data name="LastnameLengthError" xml:space="preserve">
     <value>Perekonnanimi on liiga pikk.</value>
   </data>
+  <data name="MultiLangStringId" xml:space="preserve">
+    <value>Multilang sõne</value>
+  </data>
+  <data name="MultiLangStringOwner" xml:space="preserve">
+    <value>Omanik</value>
+  </data>
+  <data name="OrderCompletedDate" xml:space="preserve">
+    <value>Tellimuse valmimiskuupäev</value>
+  </data>
+  <data name="OrderForDate" xml:space="preserve">
+    <value>Järeletulemise kuupäev</value>
+  </data>
+  <data name="OrderForDateRequired" xml:space="preserve">
+    <value>Täpsustage järeletulemise kuupäev</value>
+  </data>
+  <data name="OrderId" xml:space="preserve">
+    <value>Tellimuse nr.</value>
+  </data>
+  <data name="OrderInvoice" xml:space="preserve">
+    <value>Arve</value>
+  </data>
+  <data name="OrderPlacedDate" xml:space="preserve">
+    <value>Tellimuse avaldamiskuupäev</value>
+  </data>
+  <data name="OrderProductQuantity" xml:space="preserve">
+    <value>Kogus</value>
+  </data>
+  <data name="OrderProductQunatityRange" xml:space="preserve">
+    <value>Kogus võib olla {1} kuni {2} kg. Suuremate tellimuste korral kontakteeruga.</value>
+  </data>
+  <data name="OrderStatus" xml:space="preserve">
+    <value>Staatus</value>
+  </data>
+  <data name="OrderUser" xml:space="preserve">
+    <value>Kasutaja</value>
+  </data>
   <data name="Person_Date2" xml:space="preserve">
     <value>Kuupäev</value>
   </data>
@@ -150,7 +225,31 @@
   <data name="Person_Time2" xml:space="preserve">
     <value>Kellaaeg</value>
   </data>
+  <data name="ProductBasePrice" xml:space="preserve">
+    <value>Hind</value>
+  </data>
+  <data name="ProductBasePriceRange" xml:space="preserve">
+    <value>Hind peab jääma vahemikku {1} kuni {2}</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Kategooria</value>
+  </data>
+  <data name="ProductDescription" xml:space="preserve">
+    <value>Kirjeldus</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>Pilt</value>
+  </data>
+  <data name="ProductIngredients" xml:space="preserve">
+    <value>Koostisosad</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Toode</value>
+  </data>
   <data name="SelectOptionLabel" xml:space="preserve">
     <value>--- Vali! ---</value>
+  </data>
+  <data name="TranslationCulture" xml:space="preserve">
+    <value>Kultuur</value>
   </data>
 </root>

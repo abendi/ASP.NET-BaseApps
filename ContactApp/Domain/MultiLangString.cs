@@ -11,16 +11,21 @@ namespace Domain
 {
     public class MultiLangString
     {
+        [Key]
         [Display(ResourceType = typeof (Resources.Domain), Name = "EntityPrimaryKey")]
         public int MultiLangStringId { get; set; }
 
         /// <summary>
         /// Default value, when translation is not found
         /// </summary>
-        [MaxLength(40960)]
+
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = nameof(Resources.Common.FieldIsRequired), ErrorMessageResourceType = typeof(Resources.Common))]
+        [StringLength(40960, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Common.Value), ResourceType = typeof(Resources.Common))]
         public string Value { get; set; }
 
-        [MaxLength(255)]
+        [StringLength(255, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Domain.MultiLangStringOwner), ResourceType = typeof(Resources.Domain))]
         public string Owner { get; set; }
 
         // list of translations

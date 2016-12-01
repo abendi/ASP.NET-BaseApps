@@ -243,6 +243,7 @@
     <Compile Include="Areas\Admin\Controllers\IngredientsController.cs" />
     <Compile Include="Areas\Admin\Controllers\LanguageController.cs" />
     <Compile Include="Areas\Admin\Controllers\MultiLangStringsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SystemLogController.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="Areas\Admin\ViewModels\ContactTypeViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\ImageViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\IngredientViewModels.cs" />
+    <Compile Include="Areas\Admin\ViewModels\OrderViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\ProductViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\SystemLogViewModels.cs" />
     <Compile Include="Areas\Admin\ViewModels\TranslationViewModels.cs" />
@@ -332,6 +334,7 @@
     <Compile Include="ViewModels\OrderViewModels.cs" />
     <Compile Include="ViewModels\PersonViewModels.cs" />
     <Compile Include="ViewModels\ProductViewModels.cs" />
+    <Compile Include="ViewModels\QuestionViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -2156,6 +2159,11 @@
     <Content Include="Areas\Admin\Views\Images\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_UploadPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Images\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2408,8 +2416,10 @@
     <Content Include="Views\Products\Order.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\MyOrders.cshtml" />
     <Content Include="Views\Products\OrderSubmitted.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\QuestionSubmitted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Uploads\" />

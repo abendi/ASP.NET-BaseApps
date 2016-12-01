@@ -31,7 +31,7 @@ namespace Web.Controllers
             {
                 Orders = _uow.Orders.AllForUser(User.Identity.GetUserId<int>())
             };
-            return View("Index", vm);
+            return View("MyOrders", vm);
         }
 
         public ActionResult Invoice(int? id)
@@ -50,7 +50,7 @@ namespace Web.Controllers
                 Invoice = invoice,
                 Order = _uow.Orders.GetOrderByInvoiceId(invoice.InvoiceId)
             };
-            return View("Details", vm);
+            return View("~/Views/Orders/Details.cshtml", vm);
         }
     }
 

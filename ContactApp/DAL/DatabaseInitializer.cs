@@ -22,13 +22,14 @@ namespace DAL
             SeedIdentity(context);
             //SeedArticles(context);
             //SeedContacts(context);
-
+            SeedOrderStatuses(context);
 
             // restore state
             context.Configuration.AutoDetectChangesEnabled = autoDetectChangesEnabled;
 
             base.Seed(context);
         }
+
 
         private void SeedContacts(DataBaseContext context)
         {
@@ -205,5 +206,73 @@ namespace DAL
 
             context.SaveChanges();
         }
+        private void SeedOrderStatuses(DataBaseContext context)
+        {
+            var mls1 = new MultiLangString("Awaiting payment", "en", "Awaiting payment");
+            var mls2 = new MultiLangString("In progress", "en", "In progress");
+            var mls3 = new MultiLangString("Ready for handover", "en", "Ready for handover");
+            var mls4 = new MultiLangString("Delivered", "en", "Delivered");
+            OrderStatus s1 = new OrderStatus()
+            {
+                OrderStatusName = mls1,
+                LogicalOrder = (int)OrderStatus.StatusOrder.AwaitingPayment
+            };
+
+            OrderStatus s2 = new OrderStatus()
+            {
+                OrderStatusName = mls2,
+                LogicalOrder = (int)OrderStatus.StatusOrder.InProgress
+            };
+
+            OrderStatus s3 = new OrderStatus()
+            {
+                OrderStatusName = mls3,
+                LogicalOrder = (int)OrderStatus.StatusOrder.WaitingHandOver
+            };
+
+            OrderStatus s4 = new OrderStatus()
+            {
+                OrderStatusName = mls4,
+                LogicalOrder = (int)OrderStatus.StatusOrder.Delivered
+            };
+
+            context.OrderStatuses.Add(s1);
+            context.OrderStatuses.Add(s2);
+            context.OrderStatuses.Add(s3);
+            context.OrderStatuses.Add(s4);
+            context.SaveChanges();
+
+            Translation t1 = new Translation()
+            {
+                MultiLangString = mls1,
+                Value = "Ootab makset",
+                Culture = "et"
+            };
+            Translation t2 = new Translation()
+            {
+                MultiLangString = mls2,
+                Value = "Valmistamisel",
+                Culture = "et"
+            };
+            Translation t3 = new Translation()
+            {
+                MultiLangString = mls3,
+                Value = "Valmis üleandmiseks",
+                Culture = "et"
+            };
+            Translation t4 = new Translation()
+            {
+                MultiLangString = mls4,
+                Value = "Kliendile üle antud",
+                Culture = "et"
+            };
+
+            context.Translations.Add(t1);
+            context.Translations.Add(t2);
+            context.Translations.Add(t3);
+            context.Translations.Add(t4);
+            context.SaveChanges();
+        }
+
     }
 }

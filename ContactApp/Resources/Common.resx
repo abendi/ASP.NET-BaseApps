@@ -123,15 +123,6 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Log off</value>
-  </data>
-  <data name="ManageAccount" xml:space="preserve">
-    <value>Manage account</value>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
   </data>
@@ -141,9 +132,6 @@
   <data name="Previous" xml:space="preserve">
     <value>Previous</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
@@ -151,10 +139,10 @@
     <value>The {0} field is required.</value>
   </data>
   <data name="FieldMaxLength" xml:space="preserve">
-    <value>The field {0} must be a string or array type with a maximum length of &amp;#39;{1}&amp;#39;.</value>
+    <value>The field {0} must with a maximum length of {1}</value>
   </data>
   <data name="FieldMinLength" xml:space="preserve">
-    <value>The field {0} must be a string or array type with a minimum length of &amp;#39;{1}&amp;#39;.</value>
+    <value>The field {0} must be with a minimum length of {1}</value>
   </data>
   <data name="FieldMustBeDataTypeDate" xml:space="preserve">
     <value>The field {0} must be a date.</value>
@@ -167,5 +155,17 @@
   </data>
   <data name="SelectOptionLabel" xml:space="preserve">
     <value>--- Select! ---</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Tagasi</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="EmailValidationError" xml:space="preserve">
+    <value>Invalid e-mail address</value>
   </data>
 </root>

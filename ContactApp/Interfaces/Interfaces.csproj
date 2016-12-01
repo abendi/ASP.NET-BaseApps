@@ -57,6 +57,7 @@
     <Compile Include="Repositories\IOrderStatusRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IQuestionRepository.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\ITranslationRepository.cs" />
     <Compile Include="Repositories\IUserClaimRepository.cs" />

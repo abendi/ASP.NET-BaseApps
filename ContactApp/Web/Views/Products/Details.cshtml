@@ -1,7 +1,7 @@
 ﻿@model Domain.Product
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Model.ProductName.ToString();
 }
 
 <div class="row">
@@ -31,7 +31,7 @@
                             <li>@i.IngredientName</li>
                         }
                     </ul>
-                    @Html.ActionLink("Order", "Order", new {id = Model.ProductId}, new {@class = "btn btn-primary"})
+                    @Html.ActionLink(@Resources.ProductOrder.Order, "Order", new {id = Model.ProductId}, new {@class = "btn btn-primary"})
                 </div>
             </div>
         </div>

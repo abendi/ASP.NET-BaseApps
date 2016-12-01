@@ -1,0 +1,69 @@
+﻿@model Web.Areas.Admin.ViewModels.OrderIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderPlacedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderForDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderCompletedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Invoice.InvoiceTotalSum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Orders) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        <td>
+            @item.OrderPlacedDate.ToString("g")
+        </td>
+        <td>
+            @item.OrderForDate.ToString("g")
+        </td>
+        <td>
+            @item.OrderStatus.OrderStatusName
+        </td>
+        <td>
+            @if (item.OrderCompletedDate.HasValue)
+            {
+               @item.OrderCompletedDate.Value.ToString("g")
+            }         
+        </td>
+        <td>
+            @item.OrderUser.UserName
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invoice.InvoiceTotalSum) (@Html.ActionLink("invoice", "Invoice", new {area = "", controller = "Orders", id = item.InvoiceId}))
+        </td>
+        <td>
+            @using (Html.BeginForm("Elevate", "Orders", new { id = item.OrderId }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Next phase" class="btn btn-default" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

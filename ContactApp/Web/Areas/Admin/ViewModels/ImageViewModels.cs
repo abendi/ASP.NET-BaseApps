@@ -15,6 +15,6 @@ namespace Web.Areas.Admin.ViewModels
     {
         public HttpPostedFileBase Attachment { get; set; }
 
-        public string ImageUrl { get; set; }
+        public Image Image { get; set; }
     }
 }

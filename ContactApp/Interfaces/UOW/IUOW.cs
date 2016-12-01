@@ -32,6 +32,7 @@ namespace Interfaces.UOW
         IOrderRepository Orders { get; }
         IOrderStatusRepository OrderStatuses { get; }
         IInvoiceRepository Invoices { get; }
+        IQuestionRepository Questions { get; }
 
         // Identity, PK - string
         //IUserRepository Users { get; }

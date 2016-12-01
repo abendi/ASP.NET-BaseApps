@@ -10,19 +10,23 @@ namespace Domain
 {
     public class Translation
     {
+        [Key]
         public int TranslationId { get; set; }
 
         [Required(ErrorMessageResourceName = "FieldIsRequired", ErrorMessageResourceType = typeof(Resources.Common))]
-        [MaxLength(40960)]
+        [StringLength(40960, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Common.Value), ResourceType = typeof(Resources.Common))]
         public string Value { get; set; }
 
         [Required(ErrorMessageResourceName = "FieldIsRequired", ErrorMessageResourceType = typeof(Resources.Common))]
         [ForeignKey(nameof(MultiLangString))]
+        [Display(Name = nameof(Resources.Domain.MultiLangStringId), ResourceType = typeof(Resources.Domain))]
         public int MultiLangStringId { get; set; }
         public virtual MultiLangString MultiLangString { get; set; }
 
         [Required(ErrorMessageResourceName = "FieldIsRequired", ErrorMessageResourceType = typeof(Resources.Common))]
-        [MaxLength(12)]
+        [StringLength(12, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Domain.TranslationCulture), ResourceType = typeof(Resources.Domain))]
         public string Culture { get; set; }
     }
 }

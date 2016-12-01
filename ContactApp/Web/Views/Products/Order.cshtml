@@ -3,14 +3,13 @@
 @model Web.ViewModels.ProductOrderViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @Resources.ProductOrder.Order;
 }
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
     @Html.HiddenFor(model => model.Product.ProductId)
     <table class="table">
         <tr>
@@ -33,7 +32,7 @@
                 @Html.DisplayNameFor(model => model.Order.ProductQuantity) (kg)
             </th>
             <th>
-                Total sum (€)
+                @Resources.Domain.InvoiceTotalSum (€)
             </th>
         </tr>
 
@@ -64,6 +63,7 @@
             </td>
             <td>
                 @Html.EditorFor(model => model.Order.ProductQuantity)
+                @Html.ValidationMessageFor(model => model.Order.ProductQuantity, "", new { @class = "text-danger" })
             </td>
             <td>
                 <span id="total">
@@ -74,7 +74,7 @@
     </table>
     <div class="form-group">
         <div class="col-md-offset-6">
-            <input type="submit" value="Order" class="btn btn-default" />
+            <input type="submit" value="@Resources.ProductOrder.Order" class="btn btn-default" />
         </div>
     </div>
 }
@@ -100,29 +100,14 @@
             });
 
             $('#@nameof(Model.Order)_@nameof(Model.Order.ProductQuantity)').on('keyup', function () {
-                var tot = $('#@nameof(Model.Product.BasePrice)').text() * this.value.replace(',', '.');
+                var tot = $('#@nameof(Model.Product.BasePrice)').text().replace(',', '.') * this.value.replace(',', '.');
                 var fixed = tot.toFixed(2);
+                if (currentCultureCode == 'et') {
+                    fixed = fixed.replace('.', ',');
+                }
                 $('#total').text(fixed);
             });
 
         });
-
-        function round(value, exp) {
-            if (typeof exp === 'undefined' || +exp === 0)
-                return Math.round(value);
-
-            value = +value;
-            exp = +exp;
-
-            if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0))
-                return NaN;
-
-            value = value.toString().split('e');
-            value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
-
-            value = value.toString().split('e');
-            return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
-        }
-
     </script>
 }

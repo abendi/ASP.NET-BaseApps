@@ -1,0 +1,74 @@
+﻿@model Domain.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.InvoiceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.InvoiceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus.OrderStatusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus.OrderStatusId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderPlacedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderPlacedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderForDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderForDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderCompletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderCompletedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductQuantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

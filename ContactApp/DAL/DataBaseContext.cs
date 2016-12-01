@@ -70,6 +70,8 @@ namespace DAL
 
         public IDbSet<Order> Orders { get; set; } 
         public IDbSet<OrderStatus> OrderStatuses { get; set; }
+        public IDbSet<Invoice> Invoices { get; set; } 
+        public IDbSet<Question> Questions { get; set; } 
          
         // Identity tables, PK - string
         //public IDbSet<Role> Roles { get; set; }

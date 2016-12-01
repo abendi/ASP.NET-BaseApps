@@ -31,10 +31,10 @@
                         <li class="divider"></li>
                     }
                     <li>
-                        @Html.ActionLink(@Resources.Common.ManageAccount, "Index", new {area = "", controller = "Manage"})
+                        @Html.ActionLink(@Resources.Links.ManageAccount, "Index", new {area = "", controller = "Manage"})
                     </li>
                     <li>
-                        <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Common.LogOff</a>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Links.LogOff</a>
                     </li>
                 </ul>
             </li>
@@ -51,10 +51,10 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink(Resources.Common.Login, "Login", new {area = "", controller = "Account"})
+            @Html.ActionLink(Resources.Links.Login, "Login", new {area = "", controller = "Account"})
         </li>
         <li>
-            @Html.ActionLink(Resources.Common.Register, "Register", new {area = "", controller = "Account" })
+            @Html.ActionLink(Resources.Links.Register, "Register", new {area = "", controller = "Account" })
         </li>
 
         <li class="@Html.Raw(culture == "et" ? "list-group-item-success" : "")">

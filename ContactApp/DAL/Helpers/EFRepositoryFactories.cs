@@ -54,6 +54,7 @@ namespace DAL.Helpers
                 {typeof (IOrderRepository), dbContext => new OrderRepository(dbContext)},
                 {typeof (IOrderStatusRepository), dbContext => new OrderStatusRepository(dbContext)},
                 {typeof (IInvoiceRepository), dbContext => new InvoiceRepository(dbContext)},
+                {typeof (IQuestionRepository), dbContext => new QuestionRepository(dbContext)},
                 {typeof (IPersonRepository), dbContext => new PersonRepository(dbContext)},
                 {typeof (IContactRepository), dbContext => new ContactRepository(dbContext)},
                 {typeof (IArticleRepository), dbContext => new ArticleRepository(dbContext)},

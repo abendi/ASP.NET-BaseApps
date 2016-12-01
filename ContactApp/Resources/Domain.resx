@@ -159,4 +159,103 @@
   <data name="Person_Time2" xml:space="preserve">
     <value>Time</value>
   </data>
+  <data name="ArticleName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category name</value>
+  </data>
+  <data name="CategoryNameId" xml:space="preserve">
+    <value>Category name Id</value>
+  </data>
+  <data name="CategoryProducts" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Image filename</value>
+  </data>
+  <data name="ImageUrlInvalid" xml:space="preserve">
+    <value>Contains invalid characters</value>
+  </data>
+  <data name="IngredientHasGluten" xml:space="preserve">
+    <value>Includes gluten</value>
+  </data>
+  <data name="IngredientIsAllergenic" xml:space="preserve">
+    <value>Includes allergenes</value>
+  </data>
+  <data name="IngredientName" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
+  <data name="IngredientNameId" xml:space="preserve">
+    <value>Ingredient name Id</value>
+  </data>
+  <data name="InvoiceId" xml:space="preserve">
+    <value>Invoice number</value>
+  </data>
+  <data name="InvoicePaymentReceived" xml:space="preserve">
+    <value>Payment received date</value>
+  </data>
+  <data name="InvoiceTotalSum" xml:space="preserve">
+    <value>Total sum</value>
+  </data>
+  <data name="MultiLangStringId" xml:space="preserve">
+    <value>Multilang string</value>
+  </data>
+  <data name="MultiLangStringOwner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="OrderCompletedDate" xml:space="preserve">
+    <value>Completion date</value>
+  </data>
+  <data name="OrderForDate" xml:space="preserve">
+    <value>Pick-up date</value>
+  </data>
+  <data name="OrderForDateRequired" xml:space="preserve">
+    <value>Pick-up date is required</value>
+  </data>
+  <data name="OrderId" xml:space="preserve">
+    <value>Order nr.</value>
+  </data>
+  <data name="OrderInvoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="OrderPlacedDate" xml:space="preserve">
+    <value>Placed date</value>
+  </data>
+  <data name="OrderProductQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="OrderProductQunatityRange" xml:space="preserve">
+    <value>Quantity can be between {1} to {2} kg. For orders bigger than that, contact us.</value>
+  </data>
+  <data name="OrderStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="OrderUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="ProductBasePrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ProductBasePriceRange" xml:space="preserve">
+    <value>Price must be between {1} and {2}</value>
+  </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ProductDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ProductIngredients" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="TranslationCulture" xml:space="preserve">
+    <value>Culture</value>
+  </data>
 </root>

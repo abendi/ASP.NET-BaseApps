@@ -46,7 +46,7 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Invoice", "Invoice", new {id = item.InvoiceId})
+                @Html.ActionLink(@Resources.ProductOrder.Invoice, "Invoice", new {id = item.InvoiceId})
             </td>
         </tr>
     }

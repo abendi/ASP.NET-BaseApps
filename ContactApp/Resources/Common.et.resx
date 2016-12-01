@@ -123,15 +123,6 @@
   <data name="Cancel" xml:space="preserve">
     <value>Katkesta</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Logi sisse</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Logi välja</value>
-  </data>
-  <data name="ManageAccount" xml:space="preserve">
-    <value>Halda kontot</value>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>Järgmine</value>
   </data>
@@ -140,9 +131,6 @@
   </data>
   <data name="Previous" xml:space="preserve">
     <value>Eelmine</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Registreeru</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Kinnita</value>
@@ -164,5 +152,17 @@
   </data>
   <data name="FieldMustBeDataTypeTime" xml:space="preserve">
     <value>Väli {0} peab olema kellaaeg.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Tagasi</value>
+  </data>
+  <data name="SelectOptionLabel" xml:space="preserve">
+    <value>--- Vali! ---</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>Midagi läks valesti</value>
+  </data>
+  <data name="EmailValidationError" xml:space="preserve">
+    <value>Vigane e-maili aadress</value>
   </data>
 </root>

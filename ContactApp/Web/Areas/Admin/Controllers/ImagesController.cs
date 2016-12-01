@@ -77,7 +77,7 @@ namespace Web.Areas.Admin.Controllers
                     }
                     try
                     {
-                        ImageHelper.SaveAs(vm.Attachment, vm.ImageUrl);
+                        ImageHelper.SaveAs(vm.Attachment, vm.Image.ImageUrl);
                     }
                     catch
                     {
@@ -86,7 +86,7 @@ namespace Web.Areas.Admin.Controllers
                     }
                     Image image = new Image()
                     {
-                        ImageUrl = vm.ImageUrl + Path.GetExtension(vm.Attachment.FileName)
+                        ImageUrl = vm.Image.ImageUrl + Path.GetExtension(vm.Attachment.FileName)
                     };
                     _uow.Images.Add(image);
                     _uow.Commit();

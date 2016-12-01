@@ -18,10 +18,18 @@ namespace Web.Areas.Admin.ViewModels
     {
         public Product Product { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = nameof(Resources.Common.FieldIsRequired), ErrorMessageResourceType = typeof(Resources.Common))]
+        [StringLength(128, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Domain.ProductName), ResourceType = typeof(Resources.Domain))]
         public string ProductName { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = nameof(Resources.Common.FieldIsRequired), ErrorMessageResourceType = typeof(Resources.Common))]
+        [StringLength(128, ErrorMessageResourceName = nameof(Resources.Common.FieldMaxLength), ErrorMessageResourceType = typeof(Resources.Common))]
+        [Display(Name = nameof(Resources.Domain.ProductDescription), ResourceType = typeof(Resources.Domain))]
         public string ProductDescription { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
+        [Display(Name = nameof(Resources.Domain.ProductBasePrice), ResourceType = typeof(Resources.Domain))]
         public decimal ProductBasePrice { get; set; }
 
         public ImageCreateViewModel ImageVM { get; set; }

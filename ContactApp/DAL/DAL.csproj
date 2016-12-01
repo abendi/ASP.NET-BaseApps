@@ -94,6 +94,7 @@
     <Compile Include="Repositories\OrderStatusRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\TranslationRepsoitory.cs" />
     <Compile Include="Repositories\UserClaimRepository.cs" />

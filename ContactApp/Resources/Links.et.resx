@@ -120,13 +120,70 @@
   <data name="About" xml:space="preserve">
     <value>Meist</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Artiklid</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategooriad</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>Claims</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>Kontakt</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Avaleht</value>
   </data>
+  <data name="Identity" xml:space="preserve">
+    <value>Identiteet</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Pildid</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>Koostisained</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="Logins" xml:space="preserve">
+    <value>Logins</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Logi välja</value>
+  </data>
+  <data name="ManageAccount" xml:space="preserve">
+    <value>Halda kontot</value>
+  </data>
+  <data name="Multilangstrings" xml:space="preserve">
+    <value>Multilang sõned</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Tellimused</value>
+  </data>
   <data name="Products" xml:space="preserve">
     <value>Tooted</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registreeri</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Rollid</value>
+  </data>
+  <data name="Systemlogs" xml:space="preserve">
+    <value>Süsteemi logid</value>
+  </data>
+  <data name="Translations" xml:space="preserve">
+    <value>Tõlked</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>Kasutajate rollid</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Kasutajad</value>
   </data>
 </root>

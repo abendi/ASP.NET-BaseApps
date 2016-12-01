@@ -9,5 +9,7 @@ namespace Interfaces.Repositories
 {
     public interface IOrderStatusRepository : IBaseRepository<OrderStatus>
     {
+        OrderStatus GetNextLogicalStatusFor(int logicalOrder);
+        OrderStatus GetFirstLogicalStatus();
     }
 }

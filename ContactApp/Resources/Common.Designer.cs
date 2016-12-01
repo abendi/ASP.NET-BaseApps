@@ -70,11 +70,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tagasi.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid e-mail address.
+        /// </summary>
+        public static string EmailValidationError {
+            get {
+                return ResourceManager.GetString("EmailValidationError", resourceCulture);
             }
         }
         
@@ -88,7 +106,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The field {0} must be a string or array type with a maximum length of &amp;#39;{1}&amp;#39;..
+        ///   Looks up a localized string similar to The field {0} must with a maximum length of {1}.
         /// </summary>
         public static string FieldMaxLength {
             get {
@@ -97,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The field {0} must be a string or array type with a minimum length of &amp;#39;{1}&amp;#39;..
+        ///   Looks up a localized string similar to The field {0} must be with a minimum length of {1}.
         /// </summary>
         public static string FieldMinLength {
             get {
@@ -133,33 +151,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
-        /// </summary>
-        public static string Login {
-            get {
-                return ResourceManager.GetString("Login", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Log off.
-        /// </summary>
-        public static string LogOff {
-            get {
-                return ResourceManager.GetString("LogOff", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Manage account.
-        /// </summary>
-        public static string ManageAccount {
-            get {
-                return ResourceManager.GetString("ManageAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string Next {
@@ -187,15 +178,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register.
-        /// </summary>
-        public static string Register {
-            get {
-                return ResourceManager.GetString("Register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to --- Select! ---.
         /// </summary>
         public static string SelectOptionLabel {
@@ -205,11 +187,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something went wrong.
+        /// </summary>
+        public static string SomethingWentWrong {
+            get {
+                return ResourceManager.GetString("SomethingWentWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
     }

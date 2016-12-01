@@ -91,22 +91,22 @@ namespace Web.Areas.Admin.Controllers
                     if (!vm.ImageVM.Attachment.ContentType.ToLower().StartsWith("image"))
                     {
                         ModelStateHelper.AddFor<ImageCreateViewModel>(ModelState, s => s.Attachment,
-                            "File is not of image type");
+                            Resources.Upload.FileNotImageType);
                         return View();
                     }
                     try
                     {
                         ImageHelper.SaveAs(vm.ImageVM.Attachment,
-                            vm.ImageVM.ImageUrl);
+                            vm.ImageVM.Image.ImageUrl);
                     }
                     catch
                     {
-                        ModelState.AddModelError("", "Something went wrong!");
+                        ModelState.AddModelError("", Resources.Common.SomethingWentWrong);
                         return View();
                     }
                     vm.Product.Image = new Image()
                     {
-                        ImageUrl = vm.ImageVM.ImageUrl + Path.GetExtension(vm.ImageVM.Attachment.FileName)
+                        ImageUrl = vm.ImageVM.Image.ImageUrl + Path.GetExtension(vm.ImageVM.Attachment.FileName)
                     };
                 }
                 _uow.Products.Add(vm.Product);

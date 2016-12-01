@@ -59,6 +59,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
+    <Compile Include="Contact.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.et.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.et.resx</DependentUpon>
+    </Compile>
     <Compile Include="Domain.et.Designer.cs">
       <DependentUpon>Domain.et.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -89,11 +99,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Manage.resx</DependentUpon>
     </Compile>
+    <Compile Include="ProductOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOrder.et.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductOrder.et.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Account.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Upload.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.et.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Upload.et.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +139,14 @@
     <EmbeddedResource Include="Common.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contact.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact.et.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Contact.et.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Domain.et.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -139,6 +177,22 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Manage.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductOrder.et.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductOrder.et.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upload.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Upload.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upload.et.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Upload.et.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

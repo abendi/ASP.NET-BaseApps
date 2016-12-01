@@ -1,27 +1,17 @@
 ﻿@model Web.ViewModels.InvoiceDetailViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Resources.ProductOrder.Invoice;
 }
 
 <div>
-    <h4>Order</h4>
-    <hr />
-    <dl>
+    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Invoice.InvoiceId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Invoice.InvoiceId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Invoice.InvoicePaymentReceived)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Invoice.InvoicePaymentReceived)
         </dd>
 
         <dt>
@@ -37,7 +27,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Invoice.InvoiceTotalSum)
+            @Html.DisplayFor(model => model.Invoice.InvoiceTotalSum) €
         </dd>
     </dl>
     <table class="table">
@@ -55,7 +45,7 @@
                 @Html.DisplayNameFor(model => model.Order.Products.FirstOrDefault().BasePrice)
             </th>
             <th>
-                Sum
+                @Resources.Domain.InvoiceTotalSum
             </th>
             <th></th>
         </tr>
@@ -70,13 +60,13 @@
                     @item.ProductDescription
                 </td>
                 <td>
-                    @Model.Order.ProductQuantity
+                    @Model.Order.ProductQuantity.ToString("0.0") kg
                 </td>
                 <td>
-                    @Html.DisplayFor(model => item.BasePrice)
+                    @Html.DisplayFor(model => item.BasePrice) € / kg
                 </td>
                 <td>
-                    @((item.BasePrice * (decimal)@Model.Order.ProductQuantity).ToString("0.00"))
+                    @((item.BasePrice * (decimal)@Model.Order.ProductQuantity).ToString("0.00")) €
                 </td>
             </tr>
         }
@@ -84,5 +74,5 @@
     </table>
 </div>
 <p>
-    @Html.ActionLink("Show all orders", "MyOrders")
+    @Html.ActionLink(@Resources.ProductOrder.ShowMyOrdersLink, "MyOrders")
 </p>

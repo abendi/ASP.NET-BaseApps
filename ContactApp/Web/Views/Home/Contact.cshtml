@@ -1,0 +1,58 @@
+﻿@model Web.ViewModels.QuestionViewModel
+@{
+    ViewBag.Title = @Resources.Links.Contact;
+}
+
+<div class="col-md-4 box-item">
+    <h3>@Resources.Contact.ContactInfo</h3>
+    <span>SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM, TOTAM REM APERIAM.</span><br> <br>
+    <p>
+        JL.Kemacetan timur no.23. block.Q3<br>
+        Jakarta-Indonesia
+    </p>
+    <p>
+        +6221 888 888 90 <br>
+        +6221 888 88891
+    </p>
+    <p>info@yourdomain.com</p>
+</div>
+
+@using (Html.BeginForm("QuestionSubmit", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Question.QuestionAsker, new { htmlAttributes = new { @class = "form-control", placeholder=@Resources.Contact.EnterName} })
+                        @Html.ValidationMessageFor(model => model.Question.QuestionAsker, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Question.QuestionAskerEmail, new { htmlAttributes = new { @class = "form-control", placeholder = @Resources.Contact.EnterEmail } })
+                        @Html.ValidationMessageFor(model => model.Question.QuestionAskerEmail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Question.QuestionSubject, new { htmlAttributes = new { @class = "form-control", placeholder = @Resources.Contact.Subject } })
+                    @Html.ValidationMessageFor(model => model.Question.QuestionSubject, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea name="@nameof(Model.Question).@nameof(Model.Question.QuestionBody)" class="form-control" rows="4" cols="25"
+                                  placeholder="@Resources.Contact.Message" style="height: 250px; resize: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-skin btn-block">@Resources.Contact.Submit</button>
+                </div>
+            </div>
+
+    </div>
+}
+
+

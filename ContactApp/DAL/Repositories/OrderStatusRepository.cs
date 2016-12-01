@@ -13,6 +13,19 @@ namespace DAL.Repositories
     {
         public OrderStatusRepository(IDbContext dbContext) : base(dbContext)
         {
+
+        }
+
+        public OrderStatus GetNextLogicalStatusFor(int logicalOrder)
+        {
+            var res = DbSet.FirstOrDefault(o => o.LogicalOrder == logicalOrder + 1);
+            return res;
+        }
+
+        public OrderStatus GetFirstLogicalStatus()
+        {
+            var res = DbSet.FirstOrDefault(o => o.LogicalOrder == (int)OrderStatus.StatusOrder.AwaitingPayment);
+            return res;
         }
     }
 }

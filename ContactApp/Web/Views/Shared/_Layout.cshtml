@@ -90,28 +90,26 @@
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Resources.Links.Admin <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Contact Types", "Index", new { area = "Admin", controller = "ContactTypes" })</li>
-                                <li>@Html.ActionLink("Articles", "Index", new {area = "Admin", controller = "Articles"})</li>
-                                <li>@Html.ActionLink("Categories", "Index", new {area = "Admin", controller = "Categories"})</li>
-                                <li>@Html.ActionLink("Products", "Index", new {area = "Admin", controller = "Products"})</li>
-                                <li>@Html.ActionLink("Ingredients", "Index", new {area = "Admin", controller = "Ingredients"})</li>
-                                <li>@Html.ActionLink("Images", "Index", new { area = "Admin", controller = "Images" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Articles, "Index", new {area = "Admin", controller = "Articles"})</li>
+                                <li>@Html.ActionLink(@Resources.Links.Categories, "Index", new {area = "Admin", controller = "Categories"})</li>
+                                <li>@Html.ActionLink(@Resources.Links.Products, "Index", new {area = "Admin", controller = "Products"})</li>
+                                <li>@Html.ActionLink(@Resources.Links.Ingredients, "Index", new {area = "Admin", controller = "Ingredients"})</li>
+                                <li>@Html.ActionLink(@Resources.Links.Images, "Index", new {area = "Admin", controller = "Images"})</li>
+                                <li>@Html.ActionLink(@Resources.Links.Orders, "Index", new { area = "Admin", controller = "Orders" })</li>
                                 <li class="divider"></li>
-                                <li>@Html.ActionLink("MultiLangStrings", "Index", new { area = "Admin", controller = "MultiLangStrings" })</li>
-                                <li>@Html.ActionLink("Translations", "Index", new { area = "Admin", controller = "Translations" })</li>
-                                <li>@Html.ActionLink("System logs", "Index", new { area = "Admin", controller = "SystemLog" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Multilangstrings, "Index", new { area = "Admin", controller = "MultiLangStrings" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Translations, "Index", new { area = "Admin", controller = "Translations" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Systemlogs, "Index", new { area = "Admin", controller = "SystemLog" })</li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Identity <b class="caret"></b></a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Resources.Links.Identity <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Users", "Index", new { area = "Admin", controller = "Users" })</li>
-                                <li>@Html.ActionLink("Roles", "Index", new { area = "Admin", controller = "Roles" })</li>
-                                <li>@Html.ActionLink("Users in Roles", "Index", new { area = "Admin", controller = "UserRoles" })</li>
-                                <li>@Html.ActionLink("Logins", "Index", new { area = "Admin", controller = "UserLogins" })</li>
-                                <li>@Html.ActionLink("Claims", "Index", new { area = "Admin", controller = "UserClaims" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Users, "Index", new { area = "Admin", controller = "Users" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.Roles, "Index", new { area = "Admin", controller = "Roles" })</li>
+                                <li>@Html.ActionLink(@Resources.Links.UserRoles, "Index", new { area = "Admin", controller = "UserRoles" })</li>
                             </ul>
                         </li>
                     }
@@ -137,14 +135,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-footer col-md-6">
-                        <h2 class="footer-title">About Us</h2>
+                        <h2 class="footer-title">@Resources.Links.About</h2>
                         <div class="textwidget">
                             Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br>
                             Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non.
                         </div>
                     </div>
                     <div class="col-footer col-md-6">
-                        <h2 class="footer-title">CONTACT</h2>
+                        <h2 class="footer-title">@Resources.Links.Contact</h2>
                     <!--
                     <div class='embed-container maps'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="100%" height="200px" frameborder="0" style="border: 0"></iframe>

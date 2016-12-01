@@ -67,21 +67,20 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                Product p = _uow.Products.GetById(vm.Product.ProductId);
                 Order o = new Order()
                 {
                     OrderUserId = User.Identity.GetUserId<int>(),
                     ProductQuantity = vm.Order.ProductQuantity,
                     OrderForDate = vm.Order.OrderForDate,
-                    OrderStatus = new OrderStatus()
-                    {
-                      OrderStatusName  = new MultiLangString("In progress", "en", "In Progress", "Order.OrderStatus")
-                    },
+                    OrderStatus = _uow.OrderStatuses.GetFirstLogicalStatus(),
                     OrderPlacedDate = DateTime.Now,
                     Invoice = new Invoice()
+                    {
+                        InvoiceTotalSum = p.BasePrice * (decimal) vm.Order.ProductQuantity
+                    }
                 };
-                Product p = _uow.Products.GetById(vm.Product.ProductId);
                 o.Products.Add(p);
-                o.Invoice.InvoiceTotalSum = p.BasePrice* (decimal) o.ProductQuantity;
                 _uow.Orders.Add(o);
                 _uow.Commit();
                 return RedirectToAction("OrderSubmitted", new { id = o.OrderId });
